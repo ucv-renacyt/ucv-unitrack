@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="ion-main-content">
+    <div class="ion-title-container">
+      <h1 class="lbl">HISTORIAL</h1>
+    </div>
+
+    <div class="ion-sub-container">
+      <div class="nom">{{ nombrecompleto }}</div>
+        <div class="imgper">
+          <ion-icon name="camera-outline"></ion-icon>
+          <span class="foto">Foto</span>
+        </div>
+    </div>
+
+    <ion-grid class="table-container">
+      <ion-row>
+        <ion-col class="tit" size="2"><strong>ID</strong></ion-col>
+        <ion-col class="tit" size="2"><strong>Usuario</strong></ion-col>
+        <ion-col class="tit" size="2"><strong>Correo</strong></ion-col>
+        <ion-col class="tit" size="2"><strong>Fecha</strong></ion-col>
+        <ion-col class="tit" size="2"><strong>Hora</strong></ion-col>
+        <ion-col class="tit" size="2"><strong>Modo</strong></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let registro of reportes">
+        <ion-col class="sub" size="2">{{ registro.idUsuario }}</ion-col>
+        <ion-col class="sub" size="2">{{ registro.nombre }}</ion-col>
+        <ion-col class="sub" size="2">{{ registro.email }}</ion-col>
+        <ion-col class="sub" size="2">{{ registro.fecha }}</ion-col>
+        <ion-col class="sub" size="2">{{ registro.hora }}</ion-col>
+        <ion-col class="sub" size="2">{{ registro.modo }}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<!-- NAVEGACIÓN FIJA ABAJO -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="content-navigation">
+        <ion-col size="3">
+          <ion-button fill="clear" routerLink="/perfil" class="nav-btn">
+            <ion-icon name="people-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button fill="clear" routerLink="/home" class="nav-btn">
+            <ion-icon name="qr-code-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button fill="clear" routerLink="/historial" class="nav-btn">
+            <ion-icon name="clipboard-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button fill="clear" routerLink="/login" class="nav-btn">
+            <ion-icon name="log-in-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

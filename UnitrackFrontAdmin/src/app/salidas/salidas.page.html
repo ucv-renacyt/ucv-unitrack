@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="background-blur"></div>
+
+  <div class="title-container">
+    <div class="icon-container" (click)="openMenu()">
+      
+      <ion-icon name="menu" class="menu-icon"></ion-icon>
+    </div>
+    <div class="title">REPORTES DE SALIDA</div>
+  </div>
+
+  <div class="table-container">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="tit" size="1.7"><strong>ID</strong></ion-col>
+        <ion-col class="tit" size="1.7"><strong>Nombres</strong></ion-col>
+        <ion-col class="tit" size="1.7"><strong>Apellidos</strong></ion-col>
+        <ion-col class="tit" size="1.7"><strong>Correo</strong></ion-col>
+        <ion-col class="tit" size="1.7"><strong>Fecha</strong></ion-col>
+        <ion-col class="tit" size="1.7"><strong>Hora</strong></ion-col>
+        <ion-col class="tit" size="1.8"><strong>Modo</strong></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let registro of reportes"> <!-- Asegúrate de usar tu variable correcta -->
+        <ion-col class="sub" size="1.7">{{ registro.id }}</ion-col>
+        <ion-col class="sub" size="1.7">{{ registro.nombres }}</ion-col>
+        <ion-col class="sub" size="1.7">{{ registro.apellidos }}</ion-col> 
+        <ion-col class="sub" size="1.7">{{ registro.correo }}</ion-col>
+        <ion-col class="sub" size="1.7">{{ registro.fecha }}</ion-col>
+        <ion-col class="sub" size="1.7">{{ registro.hora }}</ion-col>
+        <ion-col class="sub" size="1.7">{{ registro.modo }}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

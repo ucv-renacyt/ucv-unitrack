@@ -1,0 +1,412 @@
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  z-index: 0;
+
+  background-image: url('../../assets/background_profile_screen.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; 
+  padding: 0 30px; 
+  box-sizing: border-box;
+}
+
+.text-header-left {
+  color: white;
+  font-size: 1.2rem;
+  max-width: 70%;
+}
+
+.text-header-left p {
+  margin: 5px 0;
+}
+
+.text-header-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ptit {
+  font-size: 1.8rem; 
+  text-align: center;
+  font-weight: 900;
+  font-style: italic;
+  color: white;
+  margin-top: 0; 
+  padding-top: 20px; 
+}
+
+ion-list.profile-list {
+  background: white;
+  margin-top:-60px; 
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+}
+
+@media screen and (min-width: 992px) {
+  ion-list.profile-list {
+    padding-bottom: 80px; 
+    padding-top: 40px; 
+  }
+}
+
+.imgper {
+  height: 90px;
+  width: 90px;
+  background-color: #3e0707;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imgper .foto {
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+
+.nom {
+  font-size: 1.4rem; 
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.nom::after {
+  content: '';
+  display: block;
+}
+
+.nom:empty::before {
+  content: 'Cargando...';
+  color: gray;
+  opacity: 0.6;
+}
+
+.nom {
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+.table-container {
+  border: 1px solid #eee; 
+  border-radius: 8px; 
+  max-height: calc(
+    100vh - 350px
+  );
+  background-color: #f9f9f9;
+}
+
+.table-container ion-row {
+  border-bottom: 1px solid #eee; 
+}
+
+.table-container ion-row:last-child {
+  border-bottom: none; 
+}
+
+
+.sub {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  padding: 0px 15px 0px 15px; 
+  font-size: 20px;
+  font-weight: 800;
+  min-height: 90px;
+  color: #151515;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.form-container-profile {
+  padding: 20px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Fila de inputs */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row.duo {
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* Cada grupo de input */
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tit {
+  font-family: 'Inter', sans-serif; 
+  color: #000000;
+  font-weight: bolder;
+  text-align: left; 
+  padding: 0px 0px 10px 0px; 
+  font-size: 15px;
+}
+
+/* Contenedor visual del valor */
+.sub-container {
+  background-color: #073A8D;
+  border-radius: 20px;
+  padding: 10px;
+  min-height: 40px;
+  max-height: 40px;
+}
+
+.sub-form{
+  color: #ededed;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.full {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .form-grid {
+    flex-direction: row;
+  }
+
+  .form-col {
+    flex: 1;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row.duo {
+    flex-direction: row;
+  }
+}
+
+
+.form-container-profile {
+  padding: 0px 40px 30px 40px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row.duo {
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.full {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .form-grid {
+    flex-direction: row;
+  }
+
+  .form-col {
+    flex: 1;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row.duo {
+    flex-direction: row;
+  }
+}
+
+
+//NAVIGATION
+.content-navigation {
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 100px;
+  display: flex;
+  justify-content: start;
+  height: 100%;
+  width: 100%;
+  margin-right: 20px;
+  margin-left: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+}
+
+@media (min-width: 992px) {
+  .content-navigation {
+    margin-bottom: 10px;
+  }
+}
+
+.btnex{
+  --box-shadow: none;
+  margin: auto;
+  width: 90px;
+  font-weight: 700;
+  height: 35px;
+  font-size: 15px;
+  --border-radius: 10px;
+  text-transform: none;
+}
+
+.ion-main-content{
+  width: 100%;
+  min-height: 100%;
+  padding: 33px;
+  background-color: #F1F1F1;
+}
+
+.main-data-user {
+  margin: 0px;
+  padding: 0 20px;
+}
+
+.info-user-row {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 0px;
+  position: relative;
+}
+
+.info-block {
+  flex: 1;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.divider {
+  width: 1px;
+  background-color: #ddd;
+  height: 60px;
+  margin: 0 10px;
+}
+
+
+ion-content {
+  --background: #f2f2f2;
+  padding-top: 280px; 
+  position: relative;
+  z-index: 1;
+}
+
+ion-row {
+  border: none;
+  background-color: #ffffff;
+  margin-top: 20px;
+  gap: 0px;
+  color:#073A8D ;
+
+}
+
+ion-row:nth-child(even) {
+  background-color: #F1F1F1;
+}
+
+ion-row {
+  padding: 12px 0;
+}
+
+ion-col {
+  padding: 0px;
+  text-align: center;
+}
+
+ion-item-background{
+background-color: #ae1717;
+}
+
+.ion-title-container{
+  div{
+    width: 100%;
+    height: 100%;
+  background-color: #000000!important;
+  }
+}
+
+.table-container{
+  padding: 0;
+}
+
+ion-footer ion-toolbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: none; 
+}
+
+ion-footer ion-toolbar ion-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0px; 
+  margin: 0px;
+  
+}
+
+ion-footer ion-toolbar ion-grid ion-button {
+  --padding-start: 0.75rem;
+  --padding-end: 0.75rem;
+}
+
+.nav-btn ion-icon {
+  font-size: 1.5rem;
+  color: rgb(7, 58, 141);
+  transition: color 0.3s ease, transform 0.3s ease; /* Se incluye transform */
+}
+
+.nav-btn:hover ion-icon {
+  color: #c10000;
+  transform: scale(1.2); /* Escala el ícono al 130% */
+}

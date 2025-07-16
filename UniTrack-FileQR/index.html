@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniTrack - Escanear QR</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="Upload-Icon-Image-Free-PNG.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="cameraWarning" class="camera-warning" style="display: none">
+        <i class="fas fa-exclamation-triangle"></i>
+        Debes conectar y permitir el acceso a una cámara para escanear el código
+        QR.
+      </div>
+      <div class="upload-card">
+        <!-- TÍTULO CON GIF -->
+        <div class="title-box">
+          <img src="gif1.gif" alt="GIF animado" />
+          <div class="qr-title">Escanee su codigo QR</div>
+        </div>
+
+        <!-- LECTOR QR -->
+        <div class="qr-reader-wrapper">
+          <div id="qr-reader"></div>
+          <div class="scanner-frame"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const qrReader = new Html5Qrcode("qr-reader");
+        const config = { fps: 10, qrbox: 250 };
+        const cameraWarning = document.getElementById("cameraWarning");
+        const successModal = document.getElementById("successModal");
+        const errorModal = document.getElementById("errorModal");
+        const successMessage = document.getElementById("successMessage");
+        const errorMessage = document.getElementById("errorMessage");
+
+        let isProcessingQr = false; // New flag to prevent multiple simultaneous scans
+
+        function showModal(modal, messageElement, message) {
+          messageElement.textContent = message;
+          modal.classList.add("active");
+          setTimeout(() => {
+            modal.classList.remove("active");
+          }, 1000);
+        }
+
+        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+          if (isProcessingQr) {
+            return; // Already processing a QR, ignore new scans
+          }
+          isProcessingQr = true; // Set flag to true
+
+          // Detener el escáner inmediatamente después de detectar un QR
+          qrReader.stop();
+
+          // Enviar el hash al backend para verificar y registrar en historial
+          fetch(
+            "https://unitrack-backend-h54d.onrender.com/qr/verificarExpiracion",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ hash: decodedText }),
+            }
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.mensaje) {
+                showModal(
+                  successModal,
+                  successMessage,
+                  "QR válido: " + data.mensaje
+                );
+              } else if (data.alreadyUsed) {
+                showModal(errorModal, errorMessage, data.error);
+              } else {
+                showModal(
+                  errorModal,
+                  errorMessage,
+                  "Error: " + (data.error || "QR no válido.")
+                );
+              }
+            })
+            .catch((err) => {
+              showModal(
+                errorModal,
+                errorMessage,
+                "Error al verificar el QR: " + err.message
+              );
+            })
+            .finally(() => {
+              isProcessingQr = false; // Reset flag
+              // Reiniciar el escáner después de que la promesa se resuelva o rechace
+              qrReader.start(
+                { facingMode: "environment" },
+                config,
+                qrCodeSuccessCallback, // Use the named function here
+                (errorMessage) => {
+                  console.warn("Error de escaneo:", errorMessage);
+                }
+              );
+            });
+        };
+
+        qrReader
+          .start(
+            { facingMode: "environment" },
+            config,
+            qrCodeSuccessCallback, // Use the named function here
+            (errorMessage) => {
+              console.warn("Error de escaneo:", errorMessage);
+            }
+          )
+          .catch((err) => {
+            if (cameraWarning) cameraWarning.style.display = "flex";
+            document.getElementById("qr-reader").style.display = "none";
+            console.error("No se pudo iniciar el lector QR", err);
+          });
+      });
+    </script>
+
+    <!-- Modales -->
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <div class="check-animation">
+          <svg viewBox="0 0 52 52">
+            <circle cx="26" cy="26" r="25" fill="none" />
+            <path
+              class="checkmark"
+              fill="none"
+              d="M14.1 27.2l7.1 7.2 16.7-16.8"
+            />
+          </svg>
+        </div>
+        <p id="successMessage"></p>
+      </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+      <div class="modal-content">
+        <div class="error-icon">
+          <i class="fas fa-times-circle"></i>
+        </div>
+        <p id="errorMessage"></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+.background-blur {
+  background: url('/assets/background-tables-section.svg') no-repeat center center/cover; // Cambia por tu imagen
+  position: fixed; // Usa fixed para cubrir toda la pantalla
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.89;
+  z-index: -1; // Para que esté detrás del contenido
+}
+
+ion-row {
+  border: 2px solid #dcdcdc; // gris claro, puedes cambiarlo
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+
+/* Estilos base para ambas tablas */
+.table-container {
+  user-select: none;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 30px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+
+  ion-row:nth-child(even) .sub {
+    background-color: #ffffff;
+  }
+  ion-row:nth-child(odd) .sub {
+    background-color: #f4f4f4;
+  }
+
+  ion-row:hover .sub {
+    background: #e61313e8 !important;
+    color: rgb(255, 255, 255);
+  }
+
+  .tit {
+    background: #02041eb0;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: transparent;
+    }
+  }
+
+  .sub {
+    text-align: center;
+    padding: 0.8rem 1rem;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+/* Animaciones y elementos compartidos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.report {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  display: inline-block;
+  
+
+  &::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    margin: 0.5rem auto 0;
+    border-radius: 3px;
+  }
+}
+
+ion-item {
+  --background: transparent !important;
+  --ion-item-background: transparent !important;
+  --border-width: 0 !important;
+}
+
+/* Responsive compartido */
+@media (max-width: 834px) {
+  .table-container {
+    .tit, .sub {
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
+    }
+  }
+  .report {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 834px) {
+  .table-container {
+    .tit {
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
+    }
+
+    .sub {
+      padding: 0.7rem 0.4rem;
+      font-size: 0.75rem; // o incluso 0.75rem si quieres más compacto
+    }
+  }
+
+  .report {
+    font-size: 1.4rem;
+  }
+}

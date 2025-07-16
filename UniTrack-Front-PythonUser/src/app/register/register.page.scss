@@ -1,0 +1,291 @@
+ion-toolbar {
+  --background: #233559;
+  padding: 10px;
+  position: relative;
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
+}
+
+.tit {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  padding-left: 60px;
+  margin-right: 60px;
+}
+
+ion-content {
+  --background: #233559; 
+  position: relative; /* Mantener relative para el contexto del botón */
+  min-height: 100vh;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 60px; /* Restaurado el padding general a 60px */
+  animation: fadeIn 0.8s ease-out;
+
+  @media (max-width: 768px) {
+    padding: 20px; /* Reducir padding en móviles */
+  }
+}
+
+.register-card {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+form {
+  width: 100%; /* El formulario ocupa todo el ancho de la tarjeta */
+}
+
+.form-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna por defecto */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+ion-list {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+ion-item {
+  --background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(35,53,89,0.1);
+  border: 2px solid #233559;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 15px;
+  --inner-padding-end: 0;
+  --padding-start: 0;
+  transition: all 0.3s ease;
+}
+
+ion-item:focus-within {
+  box-shadow: 0 0 0 4px rgba(35, 53, 89, 0.3);
+  background: transparent !important;
+  box-shadow: 0 0 0 4px rgba(74, 111, 255, 0.4), 0 0 8px rgba(74, 111, 255, 0.2);
+  border-color: #4a6fff;
+}
+
+.lbl {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.input-wrapper {
+  display: flex; /* Para poner el icono y el input en la misma línea */
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  color: #233559; /* Color del icono */
+  font-size: 1.2rem;
+  margin-right: 8px; /* Espacio entre el icono y el input */
+  min-width: 24px; /* Asegura un ancho mínimo para alineación */
+  text-align: center;
+}
+
+.custom-input {
+  --background: transparent;
+  --border-color: transparent;
+  --border-radius: 10px;
+  --padding-start: 0; /* Asegura que el input no tenga padding extra */
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.password-toggle-button {
+  --padding-start: 0; /* Elimina el padding inicial */
+  --padding-end: 0; /* Elimina el padding final */
+  --ripple-color: transparent;
+  margin-left: -40px; /* Superponer el botón sobre el input */
+  z-index: 10; /* Asegurar que esté por encima del input */
+  --color: #233559; /* Color del icono */
+  font-size: 1.3rem; /* Tamaño del icono */
+  width: 40px; /* Ancho fijo para el botón */
+  height: 40px; /* Alto fijo para el botón */
+}
+
+ion-select.custom-input {
+  --placeholder-color: #999;
+  --placeholder-opacity: 1;
+}
+
+.buttons-container {
+  --inner-padding-end: 0;
+  --padding-start: 0;
+}
+
+.buttons-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio vertical entre los botones */
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-button {
+  --background: #233559;
+  width: 100%;
+  --box-shadow: none;
+  --border-radius: 25px;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  height: 55px;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.register-button:hover,
+.register-button:active {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-button-register {
+  --background: #DD2324;
+  --box-shadow: none;
+  --border-radius: 25px;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  height: 55px;
+  width: 100%;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.back-button-register:hover,
+.back-button-register:active {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries para ajustes responsivos */
+@media (min-width: 768px) {
+  .form-fields-grid {
+    grid-template-columns: 1fr 1fr; /* Dos columnas en tablets */
+    gap: 20px;
+  }
+  .register-card {
+    width: 70%; /* Un poco más ancho en tablets */
+    max-width: 700px; /* Aumentar max-width para 2 columnas */
+  }
+  .buttons-wrapper {
+    flex-direction: row;
+    justify-content: center; /* Centra el botón horizontalmente en fila */
+    gap: 20px; /* Espacio horizontal entre botones en modo fila */
+  }
+  
+  .register-button {
+   width: 48%; /* Ajusta el ancho para pantallas más grandes */
+   margin: 0; /* Elimina márgenes individuales */
+  }
+
+  .back-button-register {
+    width: 48%; /* Ajusta el ancho para pantallas más grandes */
+    margin: 0; /* Elimina márgenes individuales */
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-fields-grid {
+    grid-template-columns: 1fr 1fr; /* Dos columnas en desktops */
+    gap: 25px;
+  }
+  .register-card {
+    width: 60%; /* Más estrecho en desktops */
+    max-width: 900px; /* Aumentar max-width para 2 columnas */
+  }
+}
+
+/* Fondo con imagen y overlay azul para la página de registro */
+.register-bg-image {
+  --background: none;
+  background: linear-gradient(rgba(35,53,89,0.85), rgba(35,53,89,0.85)), url('/assets/fondo ucv.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrar el título */
+  margin-bottom: 20px;
+  position: relative;
+  
+}
+
+.card-title {
+  color: #233559;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1; /* Permite que el título ocupe espacio y se centre */
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem; /* Reducir el tamaño del título en móviles */
+  }
+}
+
+@media (max-width: 768px) {
+  .card-header {
+    justify-content: center; /* Centrar todo en pantallas pequeñas */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes focusIn {
+  from {
+    box-shadow: 0 0 0 0 rgba(74, 111, 255, 0);
+    border-color: #e0e0e0;
+  }
+  to {
+    box-shadow: 0 0 0 4px rgba(74, 111, 255, 0.4), 0 0 8px rgba(74, 111, 255, 0.2);
+    border-color: #4a6fff;
+  }
+}
+

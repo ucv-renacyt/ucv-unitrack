@@ -1,0 +1,52 @@
+<ion-content class="correo-page" [fullscreen]="true">
+  <!-- Fondo con imagen y degradado -->
+  <div class="background-overlay"></div>
+
+  <!-- Contenedor centrado usando Ionic Grid -->
+  <ion-grid class="grid-center">
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" size-md="6" size-lg="4">
+        <!-- Tarjeta principal -->
+        <ion-card class="reset-card">
+          <!-- Botón cerrar -->
+          <ion-button class="close-btn" fill="clear" routerLink="/login">
+            <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+          </ion-button>
+
+          <!-- Cabecera -->
+          <ion-card-header class="card-header">
+            <ion-card-title>
+              <h2><ion-icon name="lock-closed-outline"></ion-icon> Nueva Contraseña</h2>
+            </ion-card-title>
+          </ion-card-header>
+
+          <!-- Contenido del formulario -->
+          <ion-card-content>
+            <ion-item lines="none" class="custom-item">
+              <p class="helper-text">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                Ingrese su correo institucional para recibir el token de verificación.
+              </p>
+            
+              <ion-label position="stacked" class="input-label">
+                <ion-icon name="mail-outline"></ion-icon>
+                Correo institucional
+              </ion-label>
+            
+              <ion-input
+                type="email"
+                [(ngModel)]="email"
+                placeholder="correo@ucvvirtual.edu.pe">
+              </ion-input>
+            </ion-item>
+
+            <ion-button expand="block" [class.success]="sent" (click)="sendVerificationCode()">
+              <ion-icon slot="start" [name]="sent ? 'checkmark-circle-outline' : 'paper-plane-outline'"></ion-icon>
+              {{ sent ? 'Enviado' : 'Enviar' }}
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

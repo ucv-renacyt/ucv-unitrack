@@ -1,0 +1,68 @@
+@import "src/theme/tablas_base";
+
+// Variables
+$header-bg-gradient: linear-gradient(
+  rgba(253, 253, 253, 0.23),
+  rgba(255, 255, 255, 0.29)
+);
+$header-bg-image: url("/assets/header-background-w.svg");
+$white: rgb(255, 255, 255);
+$red-gradient: linear-gradient(180deg, #740f0f, #d32525);
+$title-font: "Inter", sans-serif;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gradient-text {
+  background: $red-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  background: $header-bg-gradient, $header-bg-image no-repeat center center;
+  background-size: cover;
+  margin: 30px 35px 0;
+  padding: 15px 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  gap: 2em;
+  border: 2px solid $white;
+
+  @media (max-width: 834px) {
+    margin: 60px 35px 0;
+  }
+}
+
+.title {
+  font-size: 34px;
+  @include gradient-text;
+  font-family: $title-font;
+  font-weight: 900;
+  user-select: none;
+  flex: 1;
+  text-align: left;
+
+  @media (max-width: 834px) {
+    font-size: 24px;
+  }
+}
+
+.icon-container {
+  background: $red-gradient;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  @include flex-center;
+}
+
+.menu-icon {
+  font-size: 2em;
+  color: $white;
+}

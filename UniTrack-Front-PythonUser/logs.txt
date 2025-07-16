@@ -1,0 +1,130 @@
+ GRE   PythonUser   main ≡  ?1 ~1 -80    ionic serve
+> ng.cmd run app:serve --host=localhost --port=8100
+[ng] - Generating browser application bundles (phase: setup)...
+[ng] ✔ Browser application bundle generation complete.
+[ng] 
+[ng] Initial chunk files                                                                                     | Names                        |  Raw size
+[ng] vendor.js                                                                                               | vendor                       |   4.23 MB |
+[ng] polyfills.js                                                                                            | polyfills                    | 270.88 kB |
+[ng] styles.css, styles.js                                                                                   | styles                       | 185.14 kB |
+[ng] main.js                                                                                                 | main                         |  19.90 kB |
+[ng] runtime.js                                                                                              | runtime                      |  12.89 kB |
+[ng]
+[ng]                                                                                                         | Initial total                |   4.72 MB
+[ng]
+[ng] Lazy chunk files                                                                                        | Names                        |  Raw size
+[ng] node_modules_ionic_core_dist_esm_ion-datetime_3_entry_js.js                                             | -                            | 156.53 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-modal_entry_js.js                                                  | -                            |  95.44 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-app_8_entry_js.js                                                  | -                            |  84.68 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-select_3_entry_js.js                                               | -                            |  78.62 kB |
+[ng] common.js                                                                                               | common                       |  70.97 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-item_8_entry_js.js                                                 | -                            |  69.44 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-popover_entry_js.js                                                | -                            |  65.08 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-textarea_entry_js.js                                               | -                            |  62.73 kB |
+[ng] default-node_modules_ionic_core_dist_esm_data-GIsHsYIB_js.js                                            | -                            |  60.13 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-refresher_2_entry_js.js                                            | -                            |  58.77 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-input_entry_js.js                                                  | -                            |  58.23 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-alert_entry_js.js                                                  | -                            |  55.75 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-segment_2_entry_js.js                                              | -                            |  49.06 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-toast_entry_js.js                                                  | -                            |  48.90 kB | 
+[ng] node_modules_ionic_core_dist_esm_ion-range_entry_js.js                                                  | -                            |  48.81 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-menu_3_entry_js.js                                                 | -                            |  48.32 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-button_2_entry_js.js                                               | -                            |  43.06 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-input-otp_entry_js.js                                              | -                            |  39.03 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-searchbar_entry_js.js                                              | -                            |  38.56 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-nav_2_entry_js.js                                                  | -                            |  38.43 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-item-option_3_entry_js.js                                          | -                            |  35.74 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-action-sheet_entry_js.js                                           | -                            |  35.56 kB |
+[ng] node_modules_ionic_core_components_ios_transition_js.js                                                 | ios-transition-js            |  34.98 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-route_4_entry_js.js                                                | -                            |  34.42 kB |
+[ng] src_app_register_register_module_ts.js                                                                  | register-register-module     |  32.92 kB |
+[ng] src_app_perfil_perfil_module_ts.js                                                                      | perfil-perfil-module         |  32.33 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-toggle_entry_js.js                                                 | -                            |  31.91 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-radio_2_entry_js.js                                                | -                            |  30.82 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-picker-column_entry_js.js                                          | -                            |  29.84 kB |
+[ng] node_modules_ionic_core_dist_esm_input-shims-C3lNp93k_js.js                                             | input-shims-C3lNp93k-js      |  29.48 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-accordion_2_entry_js.js                                            | -                            |  29.16 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-fab_3_entry_js.js                                                  | -                            |  28.23 kB |
+[ng] default-node_modules_ionic_core_components_animation_js.js                                              | ios-transition-js            |  25.05 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-picker_entry_js.js                                                 | -                            |  24.69 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-tab-bar_2_entry_js.js                                              | -                            |  24.03 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-checkbox_entry_js.js                                               | -                            |  23.64 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-breadcrumb_2_entry_js.js                                           | -                            |  22.78 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-progress-bar_entry_js.js                                           | -                            |  22.65 kB |
+[ng] src_app_historial_historial_module_ts.js                                                                | historial-historial-module   |  22.50 kB |
+[ng] src_app_home_home_module_ts.js                                                                          | home-home-module             |  21.51 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-datetime-button_entry_js.js                                        | -                            |  20.76 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-loading_entry_js.js                                                | -                            |  20.11 kB |
+[ng] src_app_contrasena_contrasena_module_ts.js                                                              | contrasena-contrasena-module |  19.66 kB |
+[ng] src_app_login_login_module_ts.js                                                                        | login-login-module           |  19.65 kB |
+[ng] src_app_correo_correo_module_ts.js                                                                      | correo-correo-module         |  18.61 kB |
+[ng] src_app_verificar_verificar_module_ts.js                                                                | verificar-verificar-module   |  18.05 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-card_5_entry_js.js                                                 | -                            |  16.10 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-back-button_entry_js.js                                            | -                            |  15.90 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-infinite-scroll_2_entry_js.js                                      | -                            |  14.99 kB |
+[ng] src_app_qr_qr_module_ts.js                                                                              | qr-qr-module                 |  14.74 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-reorder_2_entry_js.js                                              | -                            |  14.11 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-col_3_entry_js.js                                                  | -                            |  13.14 kB |
+[ng] default-node_modules_ionic_core_dist_esm_input_utils-zWijNCrx_js-node_modules_ionic_core_dist-2e0994.js | -                            |  12.38 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-tab_2_entry_js.js                                                  | -                            |  11.33 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-select-modal_entry_js.js                                           | -                            |   9.36 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-spinner_entry_js.js                                                | -                            |   8.57 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-chip_entry_js.js                                                   | -                            |   8.18 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-split-pane_entry_js.js                                             | -                            |   7.51 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-ripple-effect_entry_js.js                                          | -                            |   6.70 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-segment-view_entry_js.js                                           | -                            |   6.32 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-picker-column-option_entry_js.js                                   | -                            |   6.14 kB |
+[ng] node_modules_ionic_core_dist_esm_index-CWbP1eJz_js.js                                                   | index-CWbP1eJz-js            |   6.11 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-avatar_3_entry_js.js                                               | -                            |   5.77 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-input-password-toggle_entry_js.js                                  | -                            |   5.19 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-img_entry_js.js                                                    | -                            |   4.58 kB |
+[ng] node_modules_ionic_core_components_md_transition_js.js                                                  | md-transition-js             |   3.05 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-backdrop_entry_js.js                                               | -                            |   3.01 kB |
+[ng] node_modules_ionic_core_dist_esm_status-tap-7t9T91bG_js.js                                              | status-tap-7t9T91bG-js       |   2.83 kB | 
+[ng] node_modules_ionic_core_dist_esm_ion-text_entry_js.js                                                   | -                            |   1.77 kB |
+[ng] node_modules_ionic_core_dist_esm_ion-segment-content_entry_js.js                                        | -                            |   1.72 kB |
+[ng]
+[ng] Build at: 2025-06-10T00:32:33.772Z - Hash: 77d11af5b274d80b - Time: 22634ms
+[ng]
+[ng] ./src/app/services/flask-api.services.service.ts:5:0-26 - Error: Module not found: Error: Can't resolve 'axios' in 'D:\Proyectos\Renacyt\UniTrack\PythonUser\src\app\services'
+[ng]
+[ng] Error: src/app/services/flask-api.services.service.ts:6:19 - error TS2307: Cannot find module 'axios' or its corresponding type declarations.
+[ng]
+[ng] 6 import axios from 'axios';
+[ng]                     ~~~~~~~
+[ng]
+[ng]
+[ng] Error: src/app/services/flask-api.services.service.ts:41:15 - error TS7006: Parameter 'response' implicitly has an 'any' type.
+[ng]
+[ng] 41         .then(response => {
+[ng]                  ~~~~~~~~
+[ng]
+[ng]
+[ng] Error: src/app/services/flask-api.services.service.ts:45:16 - error TS7006: Parameter 'error' implicitly has an 'any' type.
+[ng]
+[ng] 45         .catch(error => {
+[ng]                   ~~~~~
+[ng]
+[ng]
+[ng] Error: src/app/services/flask-api.services.service.ts:55:15 - error TS7006: Parameter 'response' implicitly has an 'any' type.
+[ng]
+[ng] 55         .then(response => {
+[ng]                  ~~~~~~~~
+[ng]
+[ng]
+[ng] Error: src/app/services/flask-api.services.service.ts:59:16 - error TS7006: Parameter 'error' implicitly has an 'any' type.
+[ng]
+[ng] 59         .catch(error => {
+[ng]                   ~~~~~
+[ng]
+[ng]
+[ng]
+[ng] × Failed to compile.
+
+[INFO] Development server running!
+
+       Local: http://localhost:8100
+
+       Use Ctrl+C to quit this process
+
+[INFO] Browser window opened to http://localhost:8100!

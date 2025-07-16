@@ -1,0 +1,193 @@
+// Fuente principal
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+// Fondo con imagen y capa oscura
+.login-background {
+  background-image: url('../../assets/Login.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to bottom right, rgba(4, 38, 172, 0.4), rgba(0, 153, 255, 0.6));
+    z-index: 1;
+  }
+}
+
+// Tarjeta blanca encima del fondo
+.login-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffffee;
+  border-radius: 24px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 420px;
+  margin: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeInCard 1.5s ease forwards;
+}
+
+// Animación de entrada
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Logo e identificación
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ucv-logo {
+  height: 60px;
+  width: auto;
+}
+
+.ucv-title {
+  font-size: 1.7rem;
+  color: #0426ac;
+  font-weight: 800;
+}
+
+// Títulos
+.logo-title,
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0426ac;
+  margin-bottom: 1rem;
+}
+
+.form-subtitle {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 1.2rem;
+}
+
+// Inputs
+ion-item.input-item {
+  --background: transparent;
+  background: transparent;
+  border-radius: 12px;
+  margin: 0.8rem auto;
+  width: 90%;
+  max-width: 320px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  padding-left: 12px;
+}
+
+.input-item::part(native) {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+ion-icon {
+  color: #4a6fff;
+  font-size: 1.3rem;
+}
+
+// Botón principal
+.login-button {
+  --background: linear-gradient(to right, #4a6fff, #0426ac);
+  --border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 90%;
+  max-width: 320px;
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  transition: transform 0.2s ease-in-out;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+.login-button:hover {
+  transform: scale(1.03);
+}
+
+// Texto de enlace
+.link-text {
+  font-size: 0.9rem;
+  color: #0426ac;
+  margin-top: 1rem;
+  cursor: pointer;
+
+  strong {
+    color: #4a6fff;
+  }
+}
+
+// Responsivo para tablets y móviles
+@media (max-width: 768px) {
+  .login-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .ucv-logo {
+    height: 50px;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .login-button {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .login-button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .input-item {
+    font-size: 0.95rem;
+  }
+}

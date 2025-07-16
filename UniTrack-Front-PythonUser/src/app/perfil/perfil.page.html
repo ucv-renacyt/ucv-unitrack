@@ -1,0 +1,121 @@
+<ion-content>
+  <div class="header">
+    <div class="text-header-left">
+      <p>Hola,</p>
+      <ion-label class="nom">
+        {{ nombrecompleto || 'Cargando...' }}
+      </ion-label>
+      <p>De vuelta a la universidad!</p>
+    </div>
+
+    <div class="text-header-right">
+        <div class="imgper">
+          <ion-label class="foto">FOTO</ion-label>
+        </div>
+    </div>
+  </div>
+
+  <ion-list lines="none" class="ion-text-center profile-list">
+
+    <div class="main-data-user">
+      <ion-row class="info-user-row">
+        <ion-col class="info-block">
+          <div class="label">Código Estudiante</div>
+          <div class="sub">{{codigo_estudiante}}</div>
+        </ion-col>
+
+        <div class="divider"></div>
+
+        <ion-col class="info-block">
+          <div class="label">Carrera</div>
+          <div class="sub">{{carreraE}}</div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+
+  <div class="form-container-profile">
+    <div class="form-grid">
+      
+      <div class="form-col">
+        <div class="form-row duo">
+          <div class="form-group">
+            <div class="tit">Ciclo:</div>
+            <div class="sub-container">
+              <div class="sub-form">{{ cicloE }}</div>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <div class="tit">Edad:</div>
+            <div class="sub-container">
+              <div class="sub-form">{{ edadE }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full">
+            <div class="tit">Sexo:</div>
+            <div class="sub-container">
+              <div class="sub-form">{{ sexoE }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-col">
+        <div class="form-row">
+          <div class="form-group full">
+            <div class="tit">Correo universitario:</div>
+            <div class="sub-container">
+              <div class="sub-form">{{ correoE }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full">
+            <div class="tit">Correo del apoderado:</div>
+            <div class="sub-container">
+              <div class="sub-form">{{ correoA }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="content-navigation">
+        <ion-col size="3">
+          <ion-button fill="clear" routerLink="/perfil" class="nav-btn">
+            <ion-icon name="people-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button fill="clear" routerLink="/home" class="nav-btn">
+            <ion-icon name="qr-code-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button fill="clear" routerLink="/historial" class="nav-btn">
+            <ion-icon name="clipboard-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button fill="clear" routerLink="/login" class="nav-btn">
+            <ion-icon name="log-in-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,43 @@
+<ion-content class="container" [fullscreen]="true">
+  <!-- En index.html dentro del <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <div class="login-background">
+    <div class="login-card">
+      <div class="logo-header">
+        <img src="../../../assets/Logo.png" alt="Logo UCV" class="ucv-logo" />
+        <h1 class="ucv-title">Universidad César Vallejo</h1>
+      </div>
+      
+      <ion-list lines="none" class="login-form">
+
+        <h2 class="form-title">¡Bienvenido!</h2>
+        <p class="form-subtitle">Inicia sesión con tu correo institucional</p>
+
+        <ion-item class="input-item">
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-input type="email" [(ngModel)]="correo" placeholder="Ingrese su correo"></ion-input>
+        </ion-item>
+
+        <ion-item class="input-item">
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-input
+            [type]="showPassword ? 'text' : 'password'"
+            [(ngModel)]="contrasena"
+            placeholder="Contraseña">
+          </ion-input>
+          <ion-button fill="clear" slot="end" (click)="togglePassword()">
+            <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+          </ion-button>
+        </ion-item>
+
+        <ion-button expand="block" class="login-button" (click)="login()">Iniciar sesión</ion-button>
+
+        <p class="link-text" routerLink="/correo">¿Olvidaste tu contraseña?</p>
+        <p class="link-text" routerLink="/register">¿No tienes una cuenta? <strong>Regístrate</strong></p>
+
+      </ion-list>
+    </div>
+  </div>
+  
+</ion-content>

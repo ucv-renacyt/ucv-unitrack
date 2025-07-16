@@ -1,0 +1,84 @@
+<ion-content class="register-page" [fullscreen]="true">
+  <div class="background-blur"></div>
+
+  <form (ngSubmit)="onSubmit()" class="form-wrapper">
+    <ion-button class="btn-close" fill="clear" routerLink="/login">
+      <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+    </ion-button>
+
+    <h2 class="form-title animate-fade">Crear Cuenta</h2>
+    <p class="subtitle animate-fade-delay">Llena los campos para continuar</p>
+
+    <ion-list lines="none" class="register-form">
+      <ion-item class="form-item animate-field">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Nombres</ion-label>
+        <ion-input type="text" [(ngModel)]="nombres" name="nombres"></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item animate-field" style="animation-delay: 0.1s">
+        <ion-icon name="people-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input
+          type="text"
+          [(ngModel)]="apellidos"
+          name="apellidos"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item animate-field" style="animation-delay: 0.3s">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Correo Institucional</ion-label>
+
+        <ion-input
+          type="email"
+          [(ngModel)]="correo"
+          name="correoUniversitario"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item animate-field" style="animation-delay: 0.4s">
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" [(ngModel)]="edad" name="edad"></ion-input>
+      </ion-item>
+
+      <ion-item class="form-item animate-field" style="animation-delay: 0.5s">
+        <ion-icon name="transgender-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Sexo</ion-label>
+        <ion-select
+          [(ngModel)]="sexo"
+          name="sexo"
+          interface="popover"
+          placeholder="Selecciona sexo"
+        >
+          <ion-select-option value="mujer">Mujer</ion-select-option>
+          <ion-select-option value="hombre">Hombre</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item
+        class="form-item animate-field password-item"
+        style="animation-delay: 0.6s"
+      >
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input
+          [type]="showPassword ? 'text' : 'password'"
+          [(ngModel)]="contrasena"
+          name="contrasena"
+        ></ion-input>
+        <ion-icon
+          [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+          slot="end"
+          (click)="togglePasswordVisibility()"
+          class="password-toggle-icon"
+        ></ion-icon>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" class="submit-btn animate-button"
+        >Registrar</ion-button
+      >
+    </ion-list>
+  </form>
+</ion-content>

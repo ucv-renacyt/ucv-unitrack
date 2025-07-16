@@ -1,0 +1,131 @@
+<ion-content [fullscreen]="true" class="register-bg-image">
+  <div class="register-container">
+    <div class="register-card">
+      <div class="card-header">
+        <h2 class="card-title">CREAR CUENTA</h2>
+      </div>
+      <form (ngSubmit)="onSubmit()">
+        <ion-list lines="none">
+          <div class="form-fields-grid">
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Nombres:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="person-outline" class="input-icon"></ion-icon>
+                <ion-input type="text" class="custom-input" [(ngModel)]="nombres" name="nombres" required
+                  placeholder="Ingrese sus nombres"></ion-input>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Apellidos:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="person-outline" class="input-icon"></ion-icon>
+                <ion-input type="text" class="custom-input" [(ngModel)]="apellidos" name="apellidos" required
+                  placeholder="Ingrese sus apellidos"></ion-input>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Correo universitario:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+                <ion-input type="email" class="custom-input" [(ngModel)]="correo" name="correo" required
+                  placeholder="Ingrese su correo universitario"></ion-input>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Código de estudiante:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="finger-print-outline" class="input-icon"></ion-icon>
+                <ion-input type="text" class="custom-input" [(ngModel)]="codigo_estudiante" name="codigo_estudiante"
+                  required placeholder="Ingrese su código de estudiante"></ion-input>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Correo del apoderado:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+                <ion-input type="email" class="custom-input" [(ngModel)]="correoA" name="correoA" required
+                  placeholder="Ingrese el correo del apoderado (opcional)"></ion-input>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Carrera:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="school-outline" class="input-icon"></ion-icon>
+                <ion-input type="text" class="custom-input" [(ngModel)]="carrera" name="carrera" required
+                  placeholder="Ingrese su carrera"></ion-input>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Ciclo:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="albums-outline" class="input-icon"></ion-icon>
+                <ion-select [(ngModel)]="ciclo" name="ciclo" placeholder="Seleccione su ciclo" class="custom-input"
+                  required>
+                  <ion-select-option value="I">I</ion-select-option>
+                  <ion-select-option value="II">II</ion-select-option>
+                  <ion-select-option value="III">III</ion-select-option>
+                  <ion-select-option value="IV">IV</ion-select-option>
+                  <ion-select-option value="V">V</ion-select-option>
+                  <ion-select-option value="VI">VI</ion-select-option>
+                  <ion-select-option value="VII">VII</ion-select-option>
+                  <ion-select-option value="VIII">VIII</ion-select-option>
+                  <ion-select-option value="IX">IX</ion-select-option>
+                  <ion-select-option value="X">X</ion-select-option>
+                </ion-select>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Edad:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="sparkles-outline" class="input-icon"></ion-icon>
+                <ion-input type="number" class="custom-input" [(ngModel)]="edad" name="edad" required
+                  placeholder="Ingrese su edad"></ion-input>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Sexo:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="transgender-outline" class="input-icon"></ion-icon>
+                <ion-select [(ngModel)]="sexo" name="sexo" placeholder="Seleccione su sexo" class="custom-input" required>
+                  <ion-select-option value="Mujer">Mujer</ion-select-option>
+                  <ion-select-option value="Hombre">Hombre</ion-select-option>
+                  <ion-select-option value="Prefiero No Decirlo">Prefiero No Decirlo</ion-select-option>
+                </ion-select>
+              </div>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked" class="lbl">Contraseña:</ion-label>
+              <div class="input-wrapper">
+                <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+                <ion-input [type]="passwordInputType" class="custom-input" [(ngModel)]="contrasena" name="contrasena" required
+                  placeholder="Crear contraseña"></ion-input>
+                <ion-button fill="clear" size="small" class="password-toggle-button" (click)="togglePasswordVisibility()">
+                  <ion-icon [name]="showPasswordIcon" slot="icon-only"></ion-icon>
+                </ion-button>
+              </div>
+            </ion-item>
+          </div>
+
+          <div class="buttons-wrapper">
+            <ion-button expand="block" type="submit" class="register-button">
+              REGISTRAR CUENTA
+            </ion-button>
+            <ion-button expand="block" routerLink="/login" class="back-button-register">
+              VOLVER
+            </ion-button>
+          </div>
+
+        </ion-list>
+      </form>
+    </div>
+  </div>
+</ion-content>

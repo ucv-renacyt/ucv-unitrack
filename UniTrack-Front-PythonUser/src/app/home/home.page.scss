@@ -1,0 +1,278 @@
+.background-container {
+  --background: url('../../assets/background_main_screen.svg') no-repeat center center / cover;
+}
+
+
+ion-content{
+    --background: #F1F1F1;
+}
+
+
+ion-list{
+    background: transparent;
+}
+
+
+.nombre{
+    --background: transparent;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+
+.ionit{
+    --background: transparent;
+    margin-top: 15px;
+}
+
+
+.ioniit{
+    --background: transparent;
+}
+
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    background-color: transparent;
+}
+.tit{
+    color: #073A8D;
+    font-size: 32px;
+    text-transform: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    margin-right: 0px;
+    display: flex;
+    margin-top: 0px;
+    text-align: center;
+}
+
+
+.sub-tit{
+    color: #073A8D;
+    font-size: 16px;
+    text-transform: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    margin-right: 0px;
+    display: flex;
+    text-align: center;
+}
+
+
+
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  color: #7e7c7c;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  margin: 0px 10px 20px 10px;
+  text-align: center;
+}
+
+
+
+
+.imgper{
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    margin-bottom: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    background-color: rgb(200, 200, 200);
+}
+.imgper .foto{
+    align-items: center;
+    font-size: 42px;
+    text-align: center;
+    margin-top: 55px;
+    color: aliceblue;
+}
+
+
+.nom{
+    color: rgb(17, 17, 17);
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.btn-qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn-qr{
+    --box-shadow: none;
+    --background: #DD2324;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    font-size: 16px;
+    --border-radius: 20px;
+    height: 45px;
+    width: 85%;
+    margin: auto;
+    text-transform: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform: scale(1);
+}
+
+
+.select-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px auto;
+  padding: 8px 16px;
+  height: 45px;
+  width: 85%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.toggle-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #151515;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.content-navigation {
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 100px;
+  display: flex;
+  justify-content: start;
+  height: 100%;
+  width: calc(100% - 20px);
+  margin: 0 10px 20px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.btnex{
+  --box-shadow: none;
+  margin: auto;
+  width: 80px;
+  font-weight: 700;
+  height: 30px;
+  font-size: 13px;
+  --border-radius: 10px;
+  text-transform: none;
+}
+
+
+ion-row {
+  border: none;
+  background-color: #ffffff;
+  margin-top: 15px;
+  gap: 0px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
+  color:#073A8D ;
+}
+
+
+ion-row:nth-child(even) {
+  background-color: #F1F1F1;
+}
+
+
+ion-row {
+  padding: 10px 0;
+}
+
+
+ion-col {
+  padding: 0px;
+  text-align: center;
+}
+
+
+ion-item-background{
+  background-color: #ae1717;
+}  
+
+
+.table-container{
+  padding: 0;
+}
+
+
+ion-footer ion-toolbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: none;
+}
+
+
+ion-footer ion-toolbar ion-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0px;
+  margin: 0px;
+}
+
+
+ion-footer ion-toolbar ion-grid ion-button {
+  --padding-start: 0.5rem;
+  --padding-end: 0.5rem;
+}
+
+
+.nav-btn ion-icon {
+  font-size: 1.2rem;
+  color: rgb(7, 58, 141);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.nav-btn:hover ion-icon {
+  color: #c10000;
+  transform: scale(1.2);
+}
+
+
+
+@media (max-width: 340px) {
+  .tit {
+    font-size: 28px;
+  }
+ 
+  .sub-tit {
+    font-size: 14px;
+  }
+ 
+  .btn-qr,
+  .select-item-container {
+    width: 90%;
+  }
+ 
+  .imgper {
+    width: 90px;
+    height: 90px;
+  }
+ 
+  .imgper .foto {
+    margin-top: 50px;
+  }
+}
+

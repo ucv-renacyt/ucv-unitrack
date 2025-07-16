@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true" class="login-bg-image">
+  <div class="main-container">
+    <div class="password-reset-card">
+      <ion-list lines="none">
+        <ion-item class="ion-text-center card-title-item">
+          <ion-label class="card-title">CAMBIO DE CONTRASEÑA</ion-label>
+        </ion-item>
+
+        <ion-item class="ion-text-center message-item">
+          <ion-label class="message-label">
+            Por favor ingresa tu correo. Se enviará un token de verificación para el cambio de contraseña.
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            type="email"
+            [(ngModel)]="email"
+            class="custom-input"
+            placeholder="Ingrese su correo institucional"
+          >
+            <ion-icon name="mail" slot="start"></ion-icon>
+          </ion-input>
+        </ion-item>
+
+        <ion-item class="ion-no-padding ion-text-center">
+          <ion-button expand="block" class="action-button-reset" (click)="sendVerificationCode()">
+            ENVIAR TOKEN
+          </ion-button>
+        </ion-item>
+
+        <ion-button expand="block" routerLink="/login" class="back-to-login-button">
+          VOLVER
+        </ion-button>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

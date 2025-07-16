@@ -1,0 +1,379 @@
+:host {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-toolbar {
+  --background: #233559;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70px;
+  height: 70px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+}
+
+ion-content {
+  --background: #fff;
+  min-height: 100vh;
+}
+
+.login-blue-bg {
+  width: 100vw;
+  height: 110px;
+  background: #0057ff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-bottom-left-radius: 38px;
+  border-bottom-right-radius: 38px;
+  position: relative;
+  z-index: 2;
+}
+
+.university-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  margin: 0 0 18px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.login-outer-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.login-card {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(35,53,89,0.10);
+  margin: 180px auto 48px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 32px 10px 32px 10px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-out;
+}
+
+ion-list {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-section {
+  --background: transparent;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.welcome-text {
+  color: #4a6fff;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 80px 0;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.lbl {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #16222d;
+  margin-bottom: 5px;
+}
+
+.custom-input {
+  --background: transparent !important;
+  --border-color: transparent !important;
+  --border-radius: 12px;
+  --padding-start: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #16222d;
+  width: 100%;
+  box-shadow: none !important;
+  outline: none !important;
+  height: 48px;
+}
+
+.input-item {
+  background: #f5f7fa;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: none;
+  border: 1px solid #eaeaea;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  transition: all 0.3s ease;
+}
+
+.input-item:focus-within {
+  box-shadow: 0 0 0 4px rgba(35, 53, 89, 0.3);
+  border-color: #233559 !important;
+  background: #f5f7fa !important;
+}
+
+.custom-input:focus, .custom-input:active, .custom-input:focus-visible {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.login-button {
+  --background: #0057ff;
+  --background-hover: #18253f;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  margin-top: 15px;
+  margin-bottom: 18px;
+  height: 50px;
+  width: 100%;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover,
+.login-button.ion-focused {
+  --background: #18253f;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.link-text {
+  color: #4a6fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 5px 0;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.link-text:hover {
+  color: #18253f;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.warning-text {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+@media (min-width: 601px) {
+  .login-bg {
+    justify-content: center;
+    padding-top: 0;
+  }
+  .login-card {
+    margin-top: 0;
+  }
+}
+
+// Responsive
+@media (max-width: 600px) {
+  .login-blue-bg {
+    height: 80px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+  .university-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  .login-card {
+    max-width: 98vw;
+    border-radius: 18px;
+    padding: 14px 0px 10px 0px;
+    margin: 100px auto 18px auto;
+  }
+  .welcome-text {
+    font-size: 1.1rem;
+  }
+  .ucv-logo {
+    width: 70px;
+    max-width: 100px;
+    margin: 0 auto 6px auto;
+  }
+  .university-title {
+    font-size: 1.1rem;
+  }
+  .welcome-text {
+    font-size: 1rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  .login-bg-image {
+    padding-top: 60px !important;
+  }
+}
+
+// Fondo con imagen y overlay azul
+.login-bg-image {
+  --background: none;
+  background: linear-gradient(rgba(35,53,89,0.85), rgba(35,53,89,0.85)), url('/assets/fondo ucv.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  width: 100vw;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  box-sizing: border-box;
+}
+
+.ucv-logo {
+  width: 100px;
+  max-width: 160px;
+  margin: 0 auto 12px auto;
+  display: block;
+}
+
+.university-title {
+  color: #233559;
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-style: italic;
+  margin: 0 0 8px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.welcome-text {
+  color: #233559;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  text-align: center;
+}
+
+.subtitle {
+  color: #233559;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.input-icon {
+  color: #16222d;
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #233559;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.login-button {
+  --background: #233559;
+  --background-hover: #18253f;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 48px;
+  width: 100%;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(35,53,89,0.10);
+  transition: background 0.2s;
+}
+
+.login-button:hover,
+.login-button.ion-focused {
+  --background: #18253f;
+}
+
+.link-text {
+  color: #233559;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 5px 0;
+  width: 100%;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+.link-text:hover {
+  color: #18253f;
+}
+
+.register-link {
+  color: #233559;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.input-label {
+  display: block;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #233559;
+  margin-bottom: 6px;
+  margin-left: 2px;
+  letter-spacing: 0.2px;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes focusIn {
+  from {
+    box-shadow: 0 0 0 0 rgba(74, 111, 255, 0);
+    border-color: #e0e0e0;
+  }
+  to {
+    box-shadow: 0 0 0 4px rgba(74, 111, 255, 0.4), 0 0 8px rgba(74, 111, 255, 0.2);
+    border-color: #4a6fff;
+  }
+}
+
