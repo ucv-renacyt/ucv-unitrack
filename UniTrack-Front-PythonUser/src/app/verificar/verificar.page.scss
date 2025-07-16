@@ -1,5 +1,5 @@
 :host {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main-container {
@@ -8,38 +8,38 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100%; 
+  min-height: 100%;
   animation: fadeIn 0.8s ease-out;
 }
 
 // Estilos para el contenedor del título principal y la descripción
 .message-container {
   text-align: center;
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
   max-width: 500px;
-  padding: 0 15px; 
+  padding: 0 15px;
 }
 // Nuevo estilo para el título principal "¡CAMBIA TU CONTRASEÑA!"
 .main-page-title {
-  color: white; 
-  font-size: 1.8rem; 
-  font-weight: bold; 
-  margin-bottom: 10px; 
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
   margin-top: 0;
 }
 
 .message-description {
-  color: #e0e0e0; 
-  font-size: 1rem; 
+  color: #e0e0e0;
+  font-size: 1rem;
   line-height: 1.4;
   margin-bottom: 0;
 }
 
 .password-reset-card {
   background: white;
-  width: 90%; 
-  max-width: 450px; 
-  border-radius: 20px; 
+  width: 90%;
+  max-width: 450px;
+  border-radius: 20px;
   padding: 30px; // Padding interno generoso
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); // Sombra sutil
   margin: 0;
@@ -58,13 +58,13 @@
   --border-width: 0;
   --padding-start: 0;
   --inner-padding-end: 0;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .card-title {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #333; 
+  color: #333;
   text-align: center;
   white-space: normal;
   line-height: 1.3;
@@ -76,20 +76,20 @@
   --border-width: 0;
   --padding-start: 0;
   --inner-padding-end: 0;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
 }
 
 .message-label {
   font-size: 0.95rem;
   line-height: 1.4;
-  color: #666; 
+  color: #666;
   font-weight: 500;
   text-align: center;
   white-space: normal;
 }
 
 // Input de correo (reutiliza custom-input)
-ion-item { 
+ion-item {
   --background: transparent;
   --inner-padding-end: 0;
   --padding-start: 0;
@@ -128,15 +128,15 @@ ion-item:focus-within {
 
 .action-button-reset {
   --box-shadow: none;
-  --border-radius: 25px; 
-  text-transform: none; 
+  --border-radius: 25px;
+  text-transform: none;
   font-weight: 600;
   font-size: 1.2rem;
-  height: 55px; 
+  height: 55px;
   width: 100%;
   margin-top: 30px;
   --background: #233559;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   transition: all 0.3s ease;
 }
 
@@ -155,17 +155,17 @@ ion-item:focus-within {
 }
 
 .link-button {
-  --color: var(--ion-color-tertiary, #5151f2); 
+  --color: var(--ion-color-tertiary, #5151f2);
   font-size: 0.95rem;
   font-weight: 500;
-  text-transform: none; 
+  text-transform: none;
   height: auto;
   --padding-start: 0;
   --padding-end: 0;
 }
 
 .back-to-login-button {
-  --background: #DD2324;
+  --background: #dd2324;
   --box-shadow: none;
   --border-radius: 25px;
   text-transform: none;
@@ -191,7 +191,7 @@ ion-item:focus-within {
 
 @media (min-width: 1024px) {
   .password-reset-card {
-    width: 450px; 
+    width: 450px;
     /* padding: 30px 40px; */
   }
 }
@@ -199,7 +199,8 @@ ion-item:focus-within {
 // Fondo con imagen y overlay azul
 .login-bg-image {
   --background: none;
-  background: linear-gradient(rgba(35,53,89,0.85), rgba(35,53,89,0.85)), url('/assets/fondo ucv.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(35, 53, 89, 0.85), rgba(35, 53, 89, 0.85)),
+    url("/assets/fondo ucv.jpg") no-repeat center center/cover;
   min-height: 100vh;
   width: 100vw;
   /* display: flex; */
@@ -225,7 +226,8 @@ ion-item:focus-within {
     border-color: #e0e0e0; /* Color de borde inicial */
   }
   to {
-    box-shadow: 0 0 0 4px rgba(74, 111, 255, 0.4), 0 0 8px rgba(74, 111, 255, 0.2); /* Sombra azul brillante */
+    box-shadow: 0 0 0 4px rgba(74, 111, 255, 0.4),
+      0 0 8px rgba(74, 111, 255, 0.2); /* Sombra azul brillante */
     border-color: #4a6fff; /* Borde azul al enfocar */
   }
 }

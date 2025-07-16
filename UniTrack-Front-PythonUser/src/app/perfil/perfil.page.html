@@ -2,93 +2,152 @@
   <div class="header">
     <div class="text-header-left">
       <p>Hola,</p>
-      <ion-label class="nom">
+      <ion-label class="nom" *ngIf="!editando; else editNombreCompleto">
         {{ nombrecompleto || 'Cargando...' }}
       </ion-label>
+      <ng-template #editNombreCompleto>
+        <ion-input [(ngModel)]="nombres" placeholder="Nombres" class="nom" [ngClass]="{ 'edit-mode-noms': editando }">
+        </ion-input>
+        <ion-input [(ngModel)]="apellidos" placeholder="Apellidos" class="nom"
+          [ngClass]="{ 'edit-mode-noms': editando }">
+        </ion-input>
+      </ng-template>
       <p>De vuelta a la universidad!</p>
     </div>
 
     <div class="text-header-right">
-        <div class="imgper">
-          <ion-label class="foto">FOTO</ion-label>
-        </div>
+      <div class="imgper"></div>
+
+      <div class="btn-icono-editar" [ngClass]="{ 'edit-mode-save': editando }">
+        <button id="btn-editar-perfil" (click)="toggleEditarPerfil()" [ngClass]="{ 'modo-edicion': editando }">
+          <ion-icon [name]="editando ? 'save-outline' : 'create-outline'" id="icono-editar"></ion-icon>
+          {{ editando ? 'Guardar' : 'Editar' }}
+        </button>
+      </div>
     </div>
   </div>
 
-  <ion-list lines="none" class="ion-text-center profile-list">
+  <ion-list class="profile-list">
+    <div class="data-main-container">
+      <div class="main-data-user">
+        <ion-row class="info-user-row">
+          <ion-col class="info-block">
+            <div class="label">Código Estudiante</div>
+            <div class="sub-container" [ngClass]="{ 'label-btn': editando }">
+              <ion-input *ngIf="editando; else viewCodigoEstudiante" [(ngModel)]="codigo_estudiante"
+                placeholder="Ingrese código de estudiante" class="sub-form"></ion-input>
+              <ng-template #viewCodigoEstudiante>
+                <div class="sub-form">{{ codigo_estudiante }}</div>
+              </ng-template>
+            </div>
+          </ion-col>
 
-    <div class="main-data-user">
-      <ion-row class="info-user-row">
-        <ion-col class="info-block">
-          <div class="label">Código Estudiante</div>
-          <div class="sub">{{codigo_estudiante}}</div>
-        </ion-col>
+          <div class="divider"></div>
 
-        <div class="divider"></div>
+          <ion-col class="info-block">
+            <div class="label">Carrera</div>
+            <div class="sub-container" [ngClass]="{ 'label-btn': editando }">
+              <ion-select *ngIf="editando; else viewCarrera" [(ngModel)]="carreraE" placeholder="Seleccione carrera"
+                class="custom-input">
+                <ion-select-option *ngFor="let carrera of carreras" [value]="carrera">{{ carrera }}</ion-select-option>
+              </ion-select>
+              <ng-template #viewCarrera>
+                <div class="sub-form" [ngClass]="{ 'label-btn': editando }">
+                  {{ carreraE }}
+                </div>
+              </ng-template>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
 
-        <ion-col class="info-block">
-          <div class="label">Carrera</div>
-          <div class="sub">{{carreraE}}</div>
-        </ion-col>
-      </ion-row>
-    </div>
+      <div class="form-container-profile">
+        <div class="form-grid">
+          <div class="form-col">
+            <div class="form-row duo">
+              <div class="form-group">
+                <div class="tit">Ciclo:</div>
+                <div class="sub-container" [ngClass]="{ 'label-btn': editando }">
+                  <ion-select *ngIf="editando; else viewCiclo" [(ngModel)]="cicloE" placeholder="Seleccione ciclo">
+                    <ion-select-option *ngFor="let ciclo of ciclos" [value]="ciclo">{{ ciclo }}</ion-select-option>
+                  </ion-select>
 
+                  <ng-template #viewCiclo>
+                    <div class="sub-form" [ngClass]="{ 'label-btn': editando }">
+                      {{ cicloE }}
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
 
+              <div class="form-group">
+                <div class="tit">Edad:</div>
+                <div class="sub-container" [ngClass]="{ 'label-btn': editando }">
+                  <ion-input *ngIf="editando; else viewEdad" [(ngModel)]="edadE" type="number" [min]="1" [max]="120"
+                    placeholder="Ingrese edad" (ionInput)="validarEdad()">
+                  </ion-input>
 
-  <div class="form-container-profile">
-    <div class="form-grid">
-      
-      <div class="form-col">
-        <div class="form-row duo">
-          <div class="form-group">
-            <div class="tit">Ciclo:</div>
-            <div class="sub-container">
-              <div class="sub-form">{{ cicloE }}</div>
+                  <ng-template #viewEdad>
+                    <div class="sub-form" [ngClass]="{ 'label-btn': editando }">
+                      {{ edadE }}
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
             </div>
 
-          </div>
-          <div class="form-group">
-            <div class="tit">Edad:</div>
-            <div class="sub-container">
-              <div class="sub-form">{{ edadE }}</div>
+            <div class="form-row">
+              <div class="form-group full">
+                <div class="tit">Sexo:</div>
+                <div class="sub-container" [ngClass]="{ 'label-btn': editando }">
+                  <ion-select *ngIf="editando; else viewSexo" [(ngModel)]="sexoE" placeholder="Seleccione sexo">
+                    <ion-select-option value="Masculino">Masculino</ion-select-option>
+                    <ion-select-option value="Femenino">Femenino</ion-select-option>
+                  </ion-select>
+                  <ng-template #viewSexo>
+                    <div class="sub-form" [ngClass]="{ 'label-btn': editando }">
+                      {{ sexoE }}
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-row">
-          <div class="form-group full">
-            <div class="tit">Sexo:</div>
-            <div class="sub-container">
-              <div class="sub-form">{{ sexoE }}</div>
+          <div class="form-col">
+            <div class="form-row">
+              <div class="form-group full">
+                <div class="tit">Correo universitario:</div>
+                <div class="sub-container" [ngClass]="{ 'label-btn': editando }">
+                  <ion-input *ngIf="editando; else viewCorreoE" [(ngModel)]="correoE"
+                    placeholder="Ingrese correo universitario" type="email" class="sub-form"></ion-input>
+                  <ng-template #viewCorreoE>
+                    <div class="sub-form">{{ correoE }}</div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full">
+                <div class="tit">Correo del apoderado:</div>
+                <div class="sub-container" [ngClass]="{ 'label-btn': editando }">
+                  <ion-input *ngIf="editando; else viewCorreoA" [(ngModel)]="correoA"
+                    placeholder="Ingrese correo del apoderado" type="email">
+                  </ion-input>
+                  <ng-template #viewCorreoA>
+                    <div class="sub-form" [ngClass]="{ 'label-btn': editando }">
+                      {{ correoA }}
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="form-col">
-        <div class="form-row">
-          <div class="form-group full">
-            <div class="tit">Correo universitario:</div>
-            <div class="sub-container">
-              <div class="sub-form">{{ correoE }}</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group full">
-            <div class="tit">Correo del apoderado:</div>
-            <div class="sub-container">
-              <div class="sub-form">{{ correoA }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
   </ion-list>
-
 </ion-content>
 
 <ion-footer>

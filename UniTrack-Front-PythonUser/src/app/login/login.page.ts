@@ -1,54 +1,64 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
-import { response } from 'express';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-
 export class LoginPage implements OnInit {
-  correoE: string=''; 
-  contrasenaE: string =''; 
+  correoE: string = '';
+  contrasenaE: string = '';
   showPassword: boolean = false;
-  
-  
- constructor(private userService: UserService, private router: Router) { }
 
- login() {
-  this.userService.loginUser(this.correoE, this.contrasenaE).subscribe(
-    response => {
-      if (response.error) {
-        // Manejar error de autenticación
-        console.error(response.error);
-      } else {
-        // Manejar éxito de autenticación
-        console.log('Login exitoso', response);
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private alertController: AlertController
+  ) {}
 
-        // Verificar las propiedades del usuario en response
-        if (response.user && response.user.nombres && response.user.apellidos && response.user.idUsuario && response.user.correo && response.user.correoA&& response.user.codigo_estudiante && response.user.carrera && response.user.ciclo && response.user.edad) {
-          // Almacenar el usuario autenticado en localStorage
-          localStorage.setItem('currentUser', JSON.stringify(response));
-          this.userService.setCurrentUser(response);
+  ngOnInit() {}
 
-          // Redirigir a otra interfaz
-          this.router.navigate(['/perfil']);
-        } else {
-          console.error('Respuesta de login incompleta.', response);
-        }
-      }
-    },
-    error => {
-      console.error('Error de conexión', error);
+  async login() {
+    if (!this.correoE || !this.contrasenaE) {
+      this.presentAlert('Error', 'Por favor, ingrese su correo y contraseña.');
+      return;
     }
-  );
-}
 
- 
-  
-  ngOnInit() {
+    this.userService.loginUser(this.correoE, this.contrasenaE)
+    .subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.userService.setCurrentUser(response.user);
+          this.userService.setPreferences('access_token', response.access_token);
+          this.userService.setPreferences('currentUser', JSON.stringify(response.user));
+          this.presentAlert('Éxito', 'Inicio de sesión exitoso.');
+          this.router.navigate(['/home']); // Redirige a la página principal
+        } else {
+          this.presentAlert(
+            'Error',
+            response.error || 'Credenciales incorrectas.'
+          );
+        }
+      },
+      error: (err) => {
+        console.error('Error en el login:', err);
+        this.presentAlert(
+          'Error',
+          'Ocurrió un error durante el inicio de sesión. Intente de nuevo.'
+        );
+      },
+    });
   }
 
+  async presentAlert(header: string, message: string) {
+    const alert = await this.alertController.create({
+      header: header,
+      message: message,
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
 import { NavController } from '@ionic/angular';
-import { EnvioCorreoService } from '../services/envio-correo.service';
-import { ModalController } from '@ionic/angular'; //
+import { UserService } from 'src/app/services/user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-verificar',
@@ -10,41 +9,36 @@ import { ModalController } from '@ionic/angular'; //
   styleUrls: ['./verificar.page.scss'],
 })
 export class VerificarPage implements OnInit {
-  verificationCode: number | null= null ;
+  verificationCode: string = '';
+  userEmail: string = '';
+
   constructor(
-    private userService: EnvioCorreoService, 
     private navCtrl: NavController,
-    private modalController: ModalController
-  ) { }
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.userEmail = params['email'] || '';
+    });
   }
-  verifyCode() {
-    if (this.verificationCode) {
-      this.userService.verifyVerificationCode(this.verificationCode).subscribe(
-        (response: any) => {
-          if (response.success) {
-            // Guardar el id_user en el servicio para usarlo luego
-            this.userService.currentUser = { id: response.id_user, code: this.verificationCode };
-  
-            // Navegar a la página de cambiar contraseña
-            this.navCtrl.navigateForward('/contrasena');
-          } else {
-            alert('Código inválido o expirado');
-          }
-        },
-        error => {
-          console.error(error);
-          alert('Error al verificar el código');
-        }
-      );
-    } else {
-      alert('Por favor, ingrese el código de verificación');
+
+  async verifyCode() {
+    if (!this.verificationCode) {
+      console.log('Please enter the verification code.');
+      return;
     }
+
+    // In a real application, you would send the email and code to the backend
+    // to verify the code. For this example, we'll just navigate.
+    console.log('Verifying code:', this.verificationCode);
+    this.navCtrl.navigateForward('/contrasena', {
+      queryParams: { email: this.userEmail, code: this.verificationCode },
+    });
   }
 
   async closeModal() {
-    this.navCtrl.navigateRoot('/login'); 
+    this.navCtrl.navigateRoot('/login');
   }
-
 }

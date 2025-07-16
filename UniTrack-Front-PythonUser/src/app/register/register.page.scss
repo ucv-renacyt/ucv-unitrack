@@ -76,7 +76,7 @@ ion-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 10px 15px;
+  padding: 3px 6px; /* Reducido el padding aún más */
   --inner-padding-end: 0;
   --padding-start: 0;
   transition: all 0.3s ease;
@@ -90,10 +90,10 @@ ion-item:focus-within {
 }
 
 .lbl {
-  font-size: 1.1rem;
+  font-size: 0.8rem; /* Reducido el tamaño de la fuente aún más */
   font-weight: 600;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 0px; /* Reducido el margen inferior aún más */
 }
 
 .input-wrapper {
@@ -114,9 +114,9 @@ ion-item:focus-within {
   --background: transparent;
   --border-color: transparent;
   --border-radius: 10px;
-  --padding-start: 0; /* Asegura que el input no tenga padding extra */
-  height: 50px;
-  font-size: 1rem;
+  --padding-start: 0;
+  height: 28px; /* Reducida la altura aún más */
+  font-size: 0.8rem; /* Reducido el tamaño de la fuente aún más */
   font-weight: 500;
   width: 100%;
 }

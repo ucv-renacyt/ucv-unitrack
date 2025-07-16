@@ -6,7 +6,7 @@
   height: 280px;
   z-index: 0;
 
-  background-image: url('../../assets/background_profile_screen.svg');
+  background-image: url("../../assets/background_profile_screen.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,9 +14,61 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row; 
-  padding: 0 30px; 
+  flex-direction: row;
+  padding: 0 30px;
   box-sizing: border-box;
+}
+
+.data-main-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 100px;
+}
+
+.btn-icono-editar {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+  background-color: rgb(79, 0, 0);
+  margin: 10px 0;
+  min-width: 103px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.btn-icono-editar:hover {
+  transform: scale(1.05);
+}
+
+#btn-editar-perfil {
+  user-select: none;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffe7e7;
+  margin: 14px;
+  gap: 3px;
+}
+
+#btn-editar-perfil.modo-edicion {
+  color: #810808;
+  font-weight: bold;
+}
+
+.edit-mode-save {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.edit-mode-noms {
+  transition: background-color 0.3s ease;
+  color: #720101;
 }
 
 .text-header-left {
@@ -25,47 +77,64 @@
   max-width: 70%;
 }
 
-.text-header-left p {
+.text-header-left p:first-child {
   margin: 5px 0;
+  font-size: 12px;
+}
+.text-header-left p:last-child {
+  margin: 5px 0;
+  font-size: 15px;
 }
 
 .text-header-right {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .ptit {
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
   text-align: center;
   font-weight: 900;
   font-style: italic;
   color: white;
-  margin-top: 0; 
-  padding-top: 20px; 
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.page-profile {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 ion-list.profile-list {
-  background: white;
-  margin-top:-60px; 
+  background: #f8fbf8;
+  margin-top: -60px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
   z-index: 2;
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 992px) {
   ion-list.profile-list {
-    padding-bottom: 80px; 
-    padding-top: 40px; 
+    padding-bottom: 80px;
+    padding-top: 40px;
   }
 }
 
 .imgper {
   height: 90px;
   width: 90px;
-  background-color: #3e0707;
+  background: url("/assets/avatar-profile.gif") center center / cover;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -75,26 +144,26 @@ ion-list.profile-list {
 
 .imgper .foto {
   font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   color: #ffffff;
 }
 
-
 .nom {
-  font-size: 1.4rem; 
+  font-size: 1.2rem;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px; 
+  min-height: 20px;
+  text-align: left;
+  margin-bottom: 0px;
 }
 
 .nom::after {
-  content: '';
+  content: "";
   display: block;
 }
 
 .nom:empty::before {
-  content: 'Cargando...';
+  content: "Cargando...";
   color: gray;
   opacity: 0.6;
 }
@@ -103,38 +172,32 @@ ion-list.profile-list {
   transition: all 0.3s ease-in-out;
 }
 
-
-
 .table-container {
-  border: 1px solid #eee; 
-  border-radius: 8px; 
-  max-height: calc(
-    100vh - 350px
-  );
+  border: 1px solid #eee;
+  border-radius: 8px;
+  max-height: calc(100vh - 350px);
   background-color: #f9f9f9;
 }
 
 .table-container ion-row {
-  border-bottom: 1px solid #eee; 
+  border-bottom: 1px solid #eee;
 }
 
 .table-container ion-row:last-child {
-  border-bottom: none; 
+  border-bottom: none;
 }
-
 
 .sub {
   display: flex;
-  justify-content: center; 
-  align-items: center;     
-  padding: 0px 15px 0px 15px; 
+  justify-content: center;
+  align-items: center;
+  padding: 0px 15px 0px 15px;
   font-size: 20px;
   font-weight: 800;
   min-height: 90px;
   color: #151515;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
-
 
 .form-container-profile {
   padding: 20px;
@@ -152,7 +215,6 @@ ion-list.profile-list {
   gap: 10px;
 }
 
-/* Fila de inputs */
 .form-row {
   display: flex;
   flex-direction: column;
@@ -164,7 +226,6 @@ ion-list.profile-list {
   gap: 10px;
 }
 
-/* Cada grupo de input */
 .form-group {
   flex: 1;
   display: flex;
@@ -172,27 +233,43 @@ ion-list.profile-list {
 }
 
 .tit {
-  font-family: 'Inter', sans-serif; 
+  font-family: "Inter", sans-serif;
   color: #000000;
   font-weight: bolder;
-  text-align: left; 
-  padding: 0px 0px 10px 0px; 
+  text-align: left;
+  padding: 0px 0px 10px 0px;
   font-size: 15px;
 }
 
-/* Contenedor visual del valor */
 .sub-container {
-  background-color: #073A8D;
+  font-family: "Inter", sans-serif;
+  background-color: #073a8d;
   border-radius: 20px;
-  padding: 10px;
-  min-height: 40px;
-  max-height: 40px;
+  display: flex;
+  padding: 5px;
+  min-height: 70px;
+  align-items: center;
+  height: 50px;
+  justify-content: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.sub-form{
-  color: #ededed;
-  font-family: 'Inter', sans-serif;
+.label-btn {
+  background-color: white;
+  color: #150000;
+  border-bottom: 2px solid #15151535;
+  border-radius: 0px;
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 
+.sub-form {
+  color: #ededed;
+  font-family: "Inter", sans-serif;
+}
+
+.label-btn .sub-form {
+  color: #150000;
 }
 
 .full {
@@ -216,7 +293,6 @@ ion-list.profile-list {
     flex-direction: row;
   }
 }
-
 
 .form-container-profile {
   padding: 0px 40px 30px 40px;
@@ -261,7 +337,6 @@ ion-list.profile-list {
   }
 }
 
-
 //NAVIGATION
 .content-navigation {
   background-color: hsl(0, 0%, 100%);
@@ -283,7 +358,7 @@ ion-list.profile-list {
   }
 }
 
-.btnex{
+.btnex {
   --box-shadow: none;
   margin: auto;
   width: 90px;
@@ -294,22 +369,23 @@ ion-list.profile-list {
   text-transform: none;
 }
 
-.ion-main-content{
+.ion-main-content {
   width: 100%;
   min-height: 100%;
   padding: 33px;
-  background-color: #F1F1F1;
+  background-color: #f8fbf8;
 }
 
 .main-data-user {
   margin: 0px;
-  padding: 0 20px;
+  padding: 0 40px;
+  margin-bottom: 10px;
 }
 
 .info-user-row {
   display: flex;
   align-items: center;
-  background: white;
+  background: #f8fbf8;
   border-radius: 12px;
   padding: 0px;
   position: relative;
@@ -333,10 +409,13 @@ ion-list.profile-list {
   margin: 0 10px;
 }
 
-
 ion-content {
+  position: relative;
+  display: flex;
+  height: 100%;
+
   --background: #f2f2f2;
-  padding-top: 280px; 
+  padding-top: 280px;
   position: relative;
   z-index: 1;
 }
@@ -346,12 +425,11 @@ ion-row {
   background-color: #ffffff;
   margin-top: 20px;
   gap: 0px;
-  color:#073A8D ;
-
+  color: #073a8d;
 }
 
 ion-row:nth-child(even) {
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
 }
 
 ion-row {
@@ -363,36 +441,37 @@ ion-col {
   text-align: center;
 }
 
-ion-item-background{
-background-color: #ae1717;
+ion-item-background {
+  background-color: #ae1717;
 }
 
-.ion-title-container{
-  div{
+.ion-title-container {
+  div {
     width: 100%;
     height: 100%;
-  background-color: #000000!important;
+    background-color: #000000 !important;
   }
 }
 
-.table-container{
+.table-container {
   padding: 0;
 }
-
+ion-footer {
+  z-index: 10;
+}
 ion-footer ion-toolbar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  box-shadow: none; 
+  box-shadow: none;
 }
 
 ion-footer ion-toolbar ion-grid {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 0px; 
+  padding: 8px 0px;
   margin: 0px;
-  
 }
 
 ion-footer ion-toolbar ion-grid ion-button {
@@ -403,10 +482,10 @@ ion-footer ion-toolbar ion-grid ion-button {
 .nav-btn ion-icon {
   font-size: 1.5rem;
   color: rgb(7, 58, 141);
-  transition: color 0.3s ease, transform 0.3s ease; /* Se incluye transform */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-btn:hover ion-icon {
   color: #c10000;
-  transform: scale(1.2); /* Escala el ícono al 130% */
+  transform: scale(1.2);
 }

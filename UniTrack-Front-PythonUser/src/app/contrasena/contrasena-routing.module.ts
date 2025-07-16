@@ -6,8 +6,8 @@ import { ContrasenaPage } from './contrasena.page';
 const routes: Routes = [
   {
     path: '',
-    component: ContrasenaPage
-  }
+    component: ContrasenaPage,
+  },
 ];
 
 @NgModule({

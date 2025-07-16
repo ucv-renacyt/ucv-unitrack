@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FlaskApiService } from '../services/flask-api.services.service';
 import { UserService } from '../services/user.service';
-
 
 @Component({
   selector: 'app-historial',
@@ -9,45 +7,34 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./historial.page.scss'],
 })
 export class HistorialPage implements OnInit {
+  nombrecompleto: string = '';
   reportes: any[] = [];
-  nombrecompleto: string = ''; 
-  id: number  | null = null; 
-  constructor(private userService: UserService, private flaskservice: FlaskApiService) {
-    console.log('Constructor de HistorialPage ejecutado');
-   }
 
-   ngOnInit() {
-    
-    console.log('HistorialPage initialized');
-    const currentUser = this.userService.getCurrentUser();
-    console.log('aqui:', currentUser);
+  constructor(private userService: UserService) {}
 
-    if (currentUser && currentUser.user) {
-      this.id = currentUser.user.idUsuario;
-      console.log('ID de usuario:', this.id);
-      this.nombrecompleto = `${currentUser.user.nombres} ${currentUser.user.apellidos}`;
-      this.obtenerReportes();
-    } else {
-      console.error('Propiedades de usuario no están definidas.');
-    }
-  }
-
-  obtenerReportes() {
-    if (this.id !== null && this.id !== undefined) {
-      this.userService.gethistorial(this.id)
-        .subscribe(
-          (data) => {
-            console.log('Datos recibidos:', data);
-            this.reportes = data; // Asignar los datos de los reportes a la variable reportes
-            console.log('Reportes obtenidos:', this.reportes);
+  ngOnInit() {
+    this.userService.getProfile().subscribe({
+      next: (data) => {
+        this.nombrecompleto = `${data.nombres} ${data.apellidos}`;
+        this.userService.getHistory(data.idUsuario).subscribe({
+          next: (historyData) => {
+            this.reportes = historyData.map((item: any) => ({
+              fecha: new Date(item.r_fecha).toLocaleDateString('es-ES'),
+              hora: item.r_hora,
+              modo: item.r_modo,
+            }));
           },
-          (error) => {
-            console.error('Error al obtener reportes:', error);
-          }
-        );
-    } else {
-      console.error('ID de usuario no válido');
-    }
+          error: (historyError) => {
+            console.error(
+              'Error al obtener el historial del usuario:',
+              historyError
+            );
+          },
+        });
+      },
+      error: (error) => {
+        console.error('Error al obtener el perfil del usuario:', error);
+      },
+    });
   }
-
 }

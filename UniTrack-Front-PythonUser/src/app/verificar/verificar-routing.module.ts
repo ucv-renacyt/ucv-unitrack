@@ -6,8 +6,8 @@ import { VerificarPage } from './verificar.page';
 const routes: Routes = [
   {
     path: '',
-    component: VerificarPage
-  }
+    component: VerificarPage,
+  },
 ];
 
 @NgModule({

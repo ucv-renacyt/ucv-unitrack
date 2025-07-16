@@ -1,5 +1,5 @@
 :host {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .header-toolbar {
@@ -13,12 +13,14 @@
   border-top-right-radius: 0;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 ion-content {
   --background: #fff;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .login-blue-bg {
@@ -57,13 +59,13 @@ ion-content {
   width: 100%;
   max-width: 420px;
   border-radius: 28px;
-  box-shadow: 0 8px 32px rgba(35,53,89,0.10);
+  box-shadow: 0 8px 32px rgba(35, 53, 89, 0.1);
   margin: 180px auto 48px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 32px 10px 32px 10px;
+  padding: 32px 80px 32px 80px;
   position: relative;
   z-index: 2;
   overflow: hidden;
@@ -138,7 +140,9 @@ ion-list {
   background: #f5f7fa !important;
 }
 
-.custom-input:focus, .custom-input:active, .custom-input:focus-visible {
+.custom-input:focus,
+.custom-input:active,
+.custom-input:focus-visible {
   background: transparent !important;
   border-color: transparent !important;
   box-shadow: none !important;
@@ -213,9 +217,11 @@ ion-list {
   }
   .login-card {
     max-width: 98vw;
+    display: flex;
+    justify-content: center;
     border-radius: 18px;
     padding: 14px 0px 10px 0px;
-    margin: 100px auto 18px auto;
+    margin: 150px auto 18px auto;
   }
   .welcome-text {
     font-size: 1.1rem;
@@ -242,7 +248,8 @@ ion-list {
 // Fondo con imagen y overlay azul
 .login-bg-image {
   --background: none;
-  background: linear-gradient(rgba(35,53,89,0.85), rgba(35,53,89,0.85)), url('/assets/fondo ucv.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(35, 53, 89, 0.85), rgba(35, 53, 89, 0.85)),
+    url("/assets/fondo ucv.jpg") no-repeat center center/cover;
   min-height: 100vh;
   width: 100vw;
   /* display: flex; */
@@ -314,7 +321,7 @@ ion-list {
   width: 100%;
   text-transform: none;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(35,53,89,0.10);
+  box-shadow: 0 2px 8px rgba(35, 53, 89, 0.1);
   transition: background 0.2s;
 }
 
@@ -372,8 +379,8 @@ ion-list {
     border-color: #e0e0e0;
   }
   to {
-    box-shadow: 0 0 0 4px rgba(74, 111, 255, 0.4), 0 0 8px rgba(74, 111, 255, 0.2);
+    box-shadow: 0 0 0 4px rgba(74, 111, 255, 0.4),
+      0 0 8px rgba(74, 111, 255, 0.2);
     border-color: #4a6fff;
   }
 }
-

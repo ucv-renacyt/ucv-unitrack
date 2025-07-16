@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ContrasenaPageRoutingModule } from './contrasena-routing.module';
-
 import { ContrasenaPage } from './contrasena.page';
 
 @NgModule({
@@ -13,8 +12,9 @@ import { ContrasenaPage } from './contrasena.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ContrasenaPageRoutingModule
+    ContrasenaPageRoutingModule,
   ],
-  declarations: [ContrasenaPage]
+  declarations: [ContrasenaPage],
+  exports: [IonicModule],
 })
 export class ContrasenaPageModule {}

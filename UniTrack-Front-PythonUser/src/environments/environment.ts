@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8081/BD_PROYUSER/api.php',
-  flaskUrl: 'http://localhost:5000',
-  correoApiUrl: 'http://localhost/BD_PROYUSER/correouser.php',
+
+  ApiBackEndUrl: 'https://unitrack-backend-h54d.onrender.com',
 };
 
 /*

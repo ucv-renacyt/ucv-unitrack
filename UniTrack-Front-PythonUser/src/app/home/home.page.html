@@ -1,21 +1,22 @@
-<ion-content [fullscreen]="true" class="background-container">
+<ion-content class="background-container">
   <ion-list class="ion-padding">
     <div class="header-container">
       <ion-label class="sub-tit">BIENVENIDO</ion-label>
       <ion-label class="tit">VALLEJIANO!</ion-label>
     </div>
-    <ion-item class="ionit" lines="none">
-     <div class=" imgper">
-      <ion-label class="foto"></ion-label>
-     </div>
-    </ion-item>
-    
-    <ion-item class="nombre" lines="none">
-      <ion-label class="nom">{{ nombrecompleto }}</ion-label>      
-    </ion-item>
+    <div class="ionit" lines="none">
+      <div class="imgper">
+        <img [src]="qrCodeUrl || '/assets/qr-image.svg'" alt="Generar su QR" class="qr-ejemplo" id="qr-preview" />
+      </div>
+    </div>
+
+    <div class="nombre" lines="none">
+      <ion-label class="nom">{{ nombrecompleto }}</ion-label>
+    </div>
 
     <ion-item class="ioniit" lines="none">
-      <ion-label class="text" >Genera tu código QR para que puedas acceder a las instalaciones de la universidad</ion-label>
+      <ion-label class="text">Genera tu código QR para que puedas acceder a las instalaciones de la
+        universidad</ion-label>
     </ion-item>
 
     <!-- Switch para seleccionar entrada o salida -->
@@ -25,9 +26,7 @@
     </div>
 
     <div class="btn-qr-container">
-      <ion-button class="btn-qr" (click)="generarQR()">
-      GENERAR QR
-      </ion-button>
+      <button class="btn-qr" (click)="generarQR()"> GENERAR QR </button>
     </div>
 
   </ion-list>
@@ -53,8 +52,8 @@
           </ion-button>
         </ion-col>
         <ion-col size="3">
-          <ion-button fill="clear" routerLink="/login" class="nav-btn">
-            <ion-icon name="log-in-outline"></ion-icon>
+          <ion-button fill="clear" (click)="logout()" class="nav-btn">
+            <ion-icon name="log-out-outline"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>

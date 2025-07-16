@@ -48,7 +48,7 @@
               <div class="input-wrapper">
                 <ion-icon name="mail-outline" class="input-icon"></ion-icon>
                 <ion-input type="email" class="custom-input" [(ngModel)]="correoA" name="correoA" required
-                  placeholder="Ingrese el correo del apoderado (opcional)"></ion-input>
+                  placeholder="Ingrese el correo del apoderado"></ion-input>
               </div>
             </ion-item>
 
@@ -56,8 +56,47 @@
               <ion-label position="stacked" class="lbl">Carrera:</ion-label>
               <div class="input-wrapper">
                 <ion-icon name="school-outline" class="input-icon"></ion-icon>
-                <ion-input type="text" class="custom-input" [(ngModel)]="carrera" name="carrera" required
-                  placeholder="Ingrese su carrera"></ion-input>
+                <ion-select [(ngModel)]="carrera" name="carrera" placeholder="Seleccione su carrera"
+                  class="custom-input" required>
+                  <ion-select-option value="Administración de Empresas">Administración de Empresas</ion-select-option>
+                  <ion-select-option value="Administración en Turismo y Hotelería">Administración en Turismo y
+                    Hotelería</ion-select-option>
+                  <ion-select-option value="Administración y Gestión Pública">Administración y Gestión
+                    Pública</ion-select-option>
+                  <ion-select-option value="Administración y Negocios Internacionales">Administración y Negocios
+                    Internacionales</ion-select-option>
+                  <ion-select-option value="Arquitectura">Arquitectura</ion-select-option>
+                  <ion-select-option value="Artes & Diseño Gráfico Empresarial">Artes & Diseño Gráfico
+                    Empresarial</ion-select-option>
+                  <ion-select-option value="Ciencias de la Comunicación">Ciencias de la Comunicación</ion-select-option>
+                  <ion-select-option value="Ciencias del Deporte">Ciencias del Deporte</ion-select-option>
+                  <ion-select-option value="Contabilidad">Contabilidad</ion-select-option>
+                  <ion-select-option value="Derecho">Derecho</ion-select-option>
+                  <ion-select-option value="Economía">Economía</ion-select-option>
+                  <ion-select-option value="Educación Inicial">Educación Inicial</ion-select-option>
+                  <ion-select-option value="Educación Primaria">Educación Primaria</ion-select-option>
+                  <ion-select-option value="Enfermería">Enfermería</ion-select-option>
+                  <ion-select-option value="Estomatología">Estomatología</ion-select-option>
+                  <ion-select-option value="Ingeniería Agroindustrial">Ingeniería Agroindustrial</ion-select-option>
+                  <ion-select-option value="Ingeniería Ambiental">Ingeniería Ambiental</ion-select-option>
+                  <ion-select-option value="Ingeniería Civil">Ingeniería Civil</ion-select-option>
+                  <ion-select-option value="Ingeniería de Ciencia de Datos">Ingeniería de Ciencia de
+                    Datos</ion-select-option>
+                  <ion-select-option value="Ingeniería de Minas">Ingeniería de Minas</ion-select-option>
+                  <ion-select-option value="Ingeniería de Sistemas">Ingeniería de Sistemas</ion-select-option>
+                  <ion-select-option value="Ingeniería Empresarial">Ingeniería Empresarial</ion-select-option>
+                  <ion-select-option value="Ingeniería en Ciberseguridad">Ingeniería en
+                    Ciberseguridad</ion-select-option>
+                  <ion-select-option value="Ingeniería Industrial">Ingeniería Industrial</ion-select-option>
+                  <ion-select-option value="Ingeniería Mecánica Eléctrica">Ingeniería Mecánica
+                    Eléctrica</ion-select-option>
+                  <ion-select-option value="Medicina">Medicina</ion-select-option>
+                  <ion-select-option value="Nutrición">Nutrición</ion-select-option>
+                  <ion-select-option value="Psicología">Psicología</ion-select-option>
+                  <ion-select-option value="Tecnología Médica en Laboratorio Clínico y Anatomía Patológica">Tecnología
+                    Médica en Laboratorio Clínico y Anatomía Patológica</ion-select-option>
+                  <ion-select-option value="Traducción e Interpretación">Traducción e Interpretación</ion-select-option>
+                </ion-select>
               </div>
             </ion-item>
 
@@ -85,8 +124,9 @@
               <ion-label position="stacked" class="lbl">Edad:</ion-label>
               <div class="input-wrapper">
                 <ion-icon name="sparkles-outline" class="input-icon"></ion-icon>
-                <ion-input type="number" class="custom-input" [(ngModel)]="edad" name="edad" required
-                  placeholder="Ingrese su edad"></ion-input>
+                <ion-input type="number" class="custom-input" [(ngModel)]="edad" name="edad" required min="0" max="99"
+                  placeholder="Ingrese su edad" (ionChange)="validateEdadInput()"
+                  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></ion-input>
               </div>
             </ion-item>
 
@@ -94,10 +134,10 @@
               <ion-label position="stacked" class="lbl">Sexo:</ion-label>
               <div class="input-wrapper">
                 <ion-icon name="transgender-outline" class="input-icon"></ion-icon>
-                <ion-select [(ngModel)]="sexo" name="sexo" placeholder="Seleccione su sexo" class="custom-input" required>
+                <ion-select [(ngModel)]="sexo" name="sexo" placeholder="Seleccione su sexo" class="custom-input"
+                  required>
                   <ion-select-option value="Mujer">Mujer</ion-select-option>
                   <ion-select-option value="Hombre">Hombre</ion-select-option>
-                  <ion-select-option value="Prefiero No Decirlo">Prefiero No Decirlo</ion-select-option>
                 </ion-select>
               </div>
             </ion-item>
@@ -106,9 +146,10 @@
               <ion-label position="stacked" class="lbl">Contraseña:</ion-label>
               <div class="input-wrapper">
                 <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
-                <ion-input [type]="passwordInputType" class="custom-input" [(ngModel)]="contrasena" name="contrasena" required
-                  placeholder="Crear contraseña"></ion-input>
-                <ion-button fill="clear" size="small" class="password-toggle-button" (click)="togglePasswordVisibility()">
+                <ion-input [type]="passwordInputType" class="custom-input" [(ngModel)]="contrasena" name="contrasena"
+                  required placeholder="Crear contraseña"></ion-input>
+                <ion-button fill="clear" size="small" class="password-toggle-button"
+                  (click)="togglePasswordVisibility()">
                   <ion-icon [name]="showPasswordIcon" slot="icon-only"></ion-icon>
                 </ion-button>
               </div>
@@ -123,7 +164,6 @@
               VOLVER
             </ion-button>
           </div>
-
         </ion-list>
       </form>
     </div>

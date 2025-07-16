@@ -8,7 +8,8 @@
 
         <ion-item class="ion-text-center message-item">
           <ion-label class="message-label">
-            Se ha enviado un token a tu correo. Ingresa el token de verificación para continuar.
+            Se ha enviado un token a tu correo. Ingresa el token de verificación
+            para continuar.
           </ion-label>
         </ion-item>
 
@@ -24,12 +25,20 @@
         </ion-item>
 
         <ion-item class="ion-no-padding ion-text-center">
-          <ion-button expand="block" class="action-button-reset" (click)="verifyCode()">
+          <ion-button
+            expand="block"
+            class="action-button-reset"
+            (click)="verifyCode()"
+          >
             VERIFICAR
           </ion-button>
         </ion-item>
 
-        <ion-button expand="block" routerLink="/login" class="back-to-login-button">
+        <ion-button
+          expand="block"
+          routerLink="/login"
+          class="back-to-login-button"
+        >
           VOLVER
         </ion-button>
       </ion-list>

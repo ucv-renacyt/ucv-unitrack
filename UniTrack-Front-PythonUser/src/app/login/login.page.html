@@ -3,29 +3,50 @@
     <h1 class="university-title">Universidad César Vallejo</h1>
     <img src="/assets/logo.gif" alt="Logo UCV" class="ucv-logo" />
     <h1 class="welcome-text">¡Bienvenidos Vallejianos!</h1>
-    
+
     <ion-list lines="none">
       <label class="input-label">Correo Institucional:</label>
       <ion-item lines="none" class="input-item">
         <span class="input-icon"><i class="fas fa-envelope"></i></span>
-        <ion-input type="email" fill="solid" class="custom-input" [(ngModel)]="correoE" name="correo" placeholder="Ingrese su correo"></ion-input>
+        <ion-input
+          type="email"
+          fill="solid"
+          class="custom-input"
+          [(ngModel)]="correoE"
+          name="correo"
+          placeholder="Ingrese su correo"
+        ></ion-input>
       </ion-item>
       <label class="input-label">Contraseña:</label>
       <ion-item lines="none" class="input-item">
         <span class="input-icon"><i class="fas fa-lock"></i></span>
-        <ion-input [type]="showPassword ? 'text' : 'password'" fill="solid" class="custom-input" [(ngModel)]="contrasenaE" name="contrasena" placeholder="Ingrese su contraseña"></ion-input>
+        <ion-input
+          [type]="showPassword ? 'text' : 'password'"
+          fill="solid"
+          class="custom-input"
+          [(ngModel)]="contrasenaE"
+          name="contrasena"
+          placeholder="Ingrese su contraseña"
+        ></ion-input>
         <span class="toggle-password" (click)="showPassword = !showPassword">
-          <i class="fas" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+          <i
+            class="fas"
+            [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+          ></i>
         </span>
       </ion-item>
       <ion-item class="ion-text-center ion-no-padding" lines="none">
-        <ion-button expand="block" (click)="login()" routerLink="" class="login-button">INICIAR SESIÓN</ion-button>
+        <ion-button expand="block" (click)="login()" class="login-button"
+          >INICIAR SESIÓN</ion-button
+        >
       </ion-item>
       <ion-item class="ion-text-center ion-no-padding" lines="none">
         <p class="link-text" routerLink="/correo">¿Olvidaste tu contraseña?</p>
       </ion-item>
       <ion-item class="ion-text-center ion-no-padding" lines="none">
-        <p class="link-text" routerLink="/register">¿No tienes una cuenta? <span class="register-link">Regístrate</span></p>
+        <p class="link-text" routerLink="/register">
+          ¿No tienes una cuenta? <span class="register-link">Regístrate</span>
+        </p>
       </ion-item>
     </ion-list>
   </div>
