@@ -230,9 +230,10 @@ ion-select.custom-input {
 }
 
 /* Fondo con imagen y overlay azul para la página de registro */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 .register-bg-image {
   --background: none;
-  background: linear-gradient(rgba(35,53,89,0.85), rgba(35,53,89,0.85)), url('/assets/fondo ucv.jpg') no-repeat center center/cover;
+  background: linear-gradient(135deg, #233559 60%, #4a6fff 100%);
   min-height: 100vh;
   width: 100vw;
   box-sizing: border-box;

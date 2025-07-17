@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 .header {
   position: relative;
   top: 0;
@@ -5,12 +6,7 @@
   width: 100%;
   height: 280px;
   z-index: 0;
-
-  background-image: url("../../assets/background_profile_screen.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  background: linear-gradient(135deg, #233559 60%, #4a6fff 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,7 +130,7 @@ ion-list.profile-list {
 .imgper {
   height: 90px;
   width: 90px;
-  background: url("/assets/avatar-profile.gif") center center / cover;
+  background: linear-gradient(135deg, #233559 60%, #4a6fff 100%);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -151,6 +147,7 @@ ion-list.profile-list {
 
 .nom {
   font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
   min-height: 20px;
   text-align: left;

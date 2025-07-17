@@ -33,9 +33,10 @@ $font-family: "Inter", sans-serif;
 }
 
 // Base Styles
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 .background-container {
-  --background: url("../../assets/background_main_screen.svg") no-repeat center
-    center / cover;
+  --background: none;
+  background: linear-gradient(135deg, #233559 60%, #4a6fff 100%);
 }
 
 ion-content {
@@ -56,7 +57,7 @@ ion-list {
 }
 
 .tit {
-  @include text-style(40px, 900, $primary-blue);
+  @include text-style(40px, 900, white);
   text-transform: none;
   margin: 0;
   display: flex;
@@ -64,22 +65,23 @@ ion-list {
 }
 
 .sub-tit {
-  @include text-style(20px, 900, $primary-blue);
+  @include text-style(20px, 900, white);
   text-transform: none;
   margin-right: 0;
   display: flex;
   text-align: left;
 }
 
+
 .text {
   @include flex-center;
-  @include text-style(14px, 700, $dark-gray);
+  @include text-style(14px, 700, white);
   margin: 0 10px;
   text-align: center;
 }
 
 .nom {
-  @include text-style(25px, bold, rgb(17, 17, 17));
+  @include text-style(25px, bold, rgb(255, 255, 255));
   text-align: center;
 }
 
