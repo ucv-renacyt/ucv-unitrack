@@ -5,7 +5,7 @@ $header-bg-gradient: linear-gradient(
   rgba(102, 2, 2, 0.58),
   rgba(78, 0, 0, 0.29)
 );
-$header-bg-image: url("/assets/header-background.svg");
+$header-bg-image: none;
 $white: rgb(255, 255, 255);
 $icon-bg: #580404;
 $icon-color: #e4e8ed;
@@ -24,7 +24,7 @@ $title-font: "Inter", sans-serif;
   align-items: center;
   background: 
   linear-gradient(#fdfdfd3b, #b8a4a449), 
-  url('/assets/header-background-w.svg') no-repeat center center;
+   no-repeat center center;
   background-size: cover;
   background-size: cover;
   margin: 30px 35px 0;

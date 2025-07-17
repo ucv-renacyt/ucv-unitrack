@@ -5,7 +5,8 @@ $header-bg-gradient: linear-gradient(
   rgba(253, 253, 253, 0.23),
   rgba(255, 255, 255, 0.29)
 );
-$header-bg-image: url("/assets/header-background-w.svg");
+$header-bg-image: none;
+$celeste-bg: #b3e0ff;
 $white: rgb(255, 255, 255);
 $red-gradient: linear-gradient(180deg, #740f0f, #d32525);
 $title-font: "Inter", sans-serif;
@@ -26,8 +27,7 @@ $title-font: "Inter", sans-serif;
 .title-container {
   display: flex;
   align-items: center;
-  background: $header-bg-gradient, $header-bg-image no-repeat center center;
-  background-size: cover;
+  background: $celeste-bg;
   margin: 30px 35px 0;
   padding: 15px 30px;
   border-radius: 20px;
